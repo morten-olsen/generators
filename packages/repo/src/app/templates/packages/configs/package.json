@@ -1,0 +1,4 @@
+{
+  "name": "<%= configPkg %>",
+  "version": "0.0.1"
+}

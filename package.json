@@ -1,0 +1,29 @@
+{
+  "name": "@morten-olsen/generators-repo",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "dev": "turbo run dev",
+    "start": "turbo run start",
+    "test": "turbo run test",
+    "bootstrap": "pnpm install && pnpm clean && pnpm build && turbo run link",
+    "lint": "eslint packages/*/src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "turbo": "^1.9.9",
+    "prettier": "^2.8.3",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "eslint": "^8.33.0"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morten-olsen/generators.git"
+  }
+}

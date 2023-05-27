@@ -1,0 +1,6 @@
+{
+  "generator-x-repo": {
+    "root": "@morten-olsen/generators",
+    "config": "@morten-olsen/generators-config"
+  }
+}

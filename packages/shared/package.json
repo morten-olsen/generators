@@ -1,0 +1,35 @@
+{
+  "name": "@morten-olsen/generators-shared",
+  "devDependencies": {
+    "@morten-olsen/generators-config": "workspace:^",
+    "@types/lodash": "^4.14.195",
+    "@types/sort-json": "^2.0.1",
+    "@types/yeoman-generator": "^5.2.11",
+    "typescript": "^5.0.4",
+    "yeoman-generator": "^5.9.0"
+  },
+  "peerDependencies": {
+    "yeoman-generator": "^5.9.0"
+  },
+  "dependencies": {
+    "@manypkg/find-root": "^2.1.0",
+    "@manypkg/get-packages": "^2.1.0",
+    "lodash": "^4.17.21",
+    "octokit": "^2.0.18",
+    "pnpm": "^8.5.1",
+    "simple-git": "^3.19.0",
+    "sort-json": "^2.0.1"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morten-olsen/generators.git"
+  }
+}

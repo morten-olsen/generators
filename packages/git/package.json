@@ -1,0 +1,32 @@
+{
+  "name": "generator-x-git",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "pnpm run copydeps && tsc",
+    "copydeps": "copyfiles --up 1 'src/*/templates/**' generators",
+    "link": "npm link",
+    "clean": "rm -rf generators"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "@morten-olsen/generators-shared": "workspace:^",
+    "generator-x-repo": "workspace:^",
+    "yeoman-generator": "^5.9.0"
+  },
+  "devDependencies": {
+    "@morten-olsen/generators-config": "workspace:^",
+    "@types/yeoman-generator": "^5.2.11",
+    "copyfiles": "^2.4.1",
+    "typescript": "^5.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morten-olsen/generators.git"
+  }
+}
