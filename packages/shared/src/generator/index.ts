@@ -2,7 +2,7 @@ import * as YeomanGenerator from 'yeoman-generator';
 import { findRoot } from '@manypkg/find-root';
 import * as sortJson from 'sort-json';
 import { join } from 'path';
-import merge from 'lodash/merge';
+import { merge } from 'lodash';
 import simpleGit from 'simple-git';
 import { getGitHubRepoFromRemote } from '../git';
 

@@ -1,7 +1,9 @@
 import pkgTmpl from './assets/pkg';
 import { RepoGenerator } from 'generator-x-repo';
-import { createTsConfigCjs } from './assets/tsconfig-cjs';
-import { createTsConfigEsm } from './assets/tsconfig-esm';
+import { createTsConfigCjs } from './assets/tsconfig.cjs';
+import { createTsConfigEsm } from './assets/tsconfig.esm';
+import { createTsConfigLibs } from './assets/tsconfig.libs';
+import { createTsConfig } from './assets/tsconfig';
 
 type Answers = {
   name: string;
@@ -46,7 +48,7 @@ class G extends RepoGenerator {
     const monoRepoConfig = await this.getMonoRepoConfig();
     const { config } = monoRepoConfig;
 
-    await this.fs.extendJSON(this.destinationPath('package.json'), {
+    this.fs.extendJSON(this.destinationPath('package.json'), {
       name: this.#answers.name,
     });
 
@@ -57,8 +59,13 @@ class G extends RepoGenerator {
     await this.fs.prefillFiles({
       json: {
         [this.destinationPath('package.json')]: pkgTmpl,
-        [this.destinationPath('tsconfig.json')]: createTsConfigCjs(config),
-        [this.destinationPath('tsconfig.esm.json')]: createTsConfigEsm(config),
+        [this.destinationPath('configs/tsconfig.cjs.json')]:
+          createTsConfigCjs(config),
+        [this.destinationPath('configs/tsconfig.esm.json')]:
+          createTsConfigEsm(config),
+        [this.destinationPath('configs/tsconfig.libs.json')]:
+          createTsConfigLibs(),
+        [this.destinationPath('tsconfig.json')]: createTsConfig(),
       },
       content: {
         [this.destinationPath('.gitignore')]: ['/node_modules/', '/dist/'].join(

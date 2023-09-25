@@ -1,8 +1,6 @@
 export default {
   scripts: {
-    'build:cjs': 'tsc -p tsconfig.json',
-    'build:esm': 'tsc -p tsconfig.esm.json',
-    build: 'pnpm build:esm && pnpm build:cjs',
+    build: 'tsc --build configs/tsconfig.libs.json',
   },
   types: './dist/cjs/types/index.d.ts',
   main: './dist/cjs/index.js',

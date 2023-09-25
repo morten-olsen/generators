@@ -63,7 +63,7 @@ class G extends Generator {
 
     this.config.set('root', root);
     this.config.set('config', configPkg);
-    await this.config.save();
+    this.config.save();
 
     this.#answers = {
       root,
@@ -90,11 +90,11 @@ class G extends Generator {
       },
     });
 
-    await this.fs.extendJSON(this.destinationPath('package.json'), {
+    this.fs.extendJSON(this.destinationPath('package.json'), {
       name: this.#answers.repoPkg,
     });
 
-    await this.fs.copyTpl(
+    this.fs.copyTpl(
       this.templatePath('**/*'),
       this.destinationPath(),
       {
